@@ -14,7 +14,6 @@ class Book < ApplicationRecord
   has_many :users, through: :reviews
   has_many :memos, as: :memoable
 
-=begin
   validates :isbn,
     presence: true,
     uniqueness: true,
@@ -27,7 +26,6 @@ class Book < ApplicationRecord
     numericality: { only_integer: true, less_than: 10000 }
   validates :publish,
     inclusion:{ in: ['技術評論社', '翔泳社', '秀和システム', '日経BP社', 'ソシム'] }
-=end
 
 =begin
   #uniqueness 検証 - 一意性検証
