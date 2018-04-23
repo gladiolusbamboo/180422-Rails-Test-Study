@@ -3,7 +3,9 @@ require 'test_helper'
 class BooksControllerTest < ActionDispatch::IntegrationTest
 
   test "diff check" do
+    # 新しいレコードをcreateしたときに１件増えるかテスト
     assert_difference 'Book.count', 1 do
+      # /books にPOSTすることでcreateアクションを呼び出す
       post books_url,
         params: {
           book: {

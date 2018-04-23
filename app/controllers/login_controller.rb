@@ -1,5 +1,5 @@
 class LoginController < ApplicationController
-   #skip_before_action :check_logined
+   skip_before_action :check_logined
 
   def auth
     usr = User.find_by(username: params[:username])
